@@ -8,6 +8,7 @@ const pressure = document.getElementById('current-pressure');
 const temp = document.getElementById('current-temp');
 const msgElem = document.getElementById('error-msg');
 const resultElem = document.getElementById('weather-content');
+const detailElem = document.getElementById('details');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -27,6 +28,16 @@ weatherForm.addEventListener('submit', (e) => {
                 precip.textContent = 'Precip: ' + data.precip + ' mm';
                 pressure.textContent = 'Pressure: ' + data.pressure + ' mb';
                 temp.innerHTML = data.temperature + '&#176;c';
+                detailElem.innerHTML =
+                    'It is currently ' +
+                    data.temperature +
+                    '&#176;c out but feels like ' +
+                    data.feelslike +
+                    '&#176;c. Humidity is ' +
+                    data.humidity +
+                    '%. There is a ' +
+                    data.precip +
+                    '% chance of rain.';
             }
         });
     });

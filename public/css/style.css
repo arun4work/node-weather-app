@@ -96,3 +96,7 @@ button {
 #current-temp {
     font-size: 32px;
 }
+
+#details {
+    margin-top: 20px;
+}

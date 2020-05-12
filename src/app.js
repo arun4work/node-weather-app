@@ -24,6 +24,7 @@ app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
         name: 'Arun Bahal',
+        description: 'Use this site to get your weather!',
     });
 });
 
@@ -58,7 +59,7 @@ app.get('/weather', (req, res) => {
             return res.send({error});
         }
 
-        forecast(latitude, longitude, (error, {weather_descriptions, temperature, precip, wind_speed, pressure, humidity} = {}) => {
+        forecast(latitude, longitude, (error, {weather_descriptions, temperature, precip, wind_speed, pressure, humidity, feelslike} = {}) => {
             if (error) {
                 return res.send({error});
             }
@@ -69,6 +70,7 @@ app.get('/weather', (req, res) => {
                 wind_speed,
                 pressure,
                 humidity,
+                feelslike,
                 location,
                 address: req.query.address,
             });
