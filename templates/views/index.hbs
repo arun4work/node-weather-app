@@ -3,6 +3,7 @@
 
     <head>
         <title>Weather</title>
+        <meta charset="UTF-8">
         <link rel="icon" href="./img/fav-icon.png">
         <link rel="stylesheet" href="./css/style.css" />
     </head>
@@ -14,8 +15,19 @@
                 <input type="text" placeholder="Location" />
                 <Button>Search</Button>
             </form>
-            <p id="message-1"></p>
-            <p id="message-2"></p>
+            <p id="error-msg"></p>
+            <div id='weather-content'>
+                <div id="location"></div>
+                <div>
+                    <span class="col-3" id="weather-desc"></span>
+                    <span class="col-3" id="current-temp"></span>
+                    <span class="col-3">
+                        <span id="current-wind-speed"></span>
+                        <span id="current-precip"></span>
+                        <span id="current-pressure"></span>
+                    </span>
+                </div>
+            </div>
         </div>
 
         {{>footer}}

@@ -8,8 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to fetch weather data. Please try another co-ordinate', undefined);
         } else {
-            const {weather_descriptions, temperature, precip} = body.current;
-            callback(undefined, weather_descriptions + '. It is currently ' + temperature + ' degrees out. There is a ' + precip + '% chance of rain.');
+            callback(undefined, body.current);
         }
     });
 };
